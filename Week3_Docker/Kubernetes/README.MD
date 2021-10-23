@@ -45,6 +45,19 @@ I forked repo:
 
 3.2  Install minikube
 
+      curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+      sudo mkdir -p /usr/local/bin/
+      sudo install minikube /usr/local/bin/ 
+      minikube start --nodes 2 -p worker
+      
+      #verify we added 2 nodes ( master and worker) 
+      kubectl get nodes
+      
+![minikube-srv-nodes](https://user-images.githubusercontent.com/86925275/138562873-faef27fc-2ec4-4d79-b644-ee1c881bc1a2.png)
+
+
+
+
 **Task 4)** Deploy the application into the K8S cluster
 
 **4.1.** Create Deployment .yaml file with containerized application
