@@ -16,6 +16,10 @@ I forked repo:
     sudo apt-get install docker-ce 
     # verify versions of installed tools
     docker --version
+    
+    #add Docker to aoutostart
+    sudo systemctl enable docker
+    sudo systemctl start docker
    
 2.2 Install git and clone repository
    
