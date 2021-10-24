@@ -59,8 +59,20 @@ I forked repo:
  ![docker-run-2](https://user-images.githubusercontent.com/86925275/138613419-e5ef3ec1-8e3d-4211-be39-7894070e2539.png)
 
  
- 
- 
+  2.7 Push image to DockerHub
+  
+  I executed the following commands:
+  
+     docker ps  # to find out container id 
+     docker commit efbb66d4eecc andriisobchuk/python-app # set the image name
+     docker login # login to remote DockerHub
+     docker push andriisobchuk/python-app #push image to DockerHub
+  
+  
+ ![docker-push](https://user-images.githubusercontent.com/86925275/138614517-0c761c5d-187f-47d3-8ec8-dbdc45ed7b5b.png)
+
+ ![docker-hub-2](https://user-images.githubusercontent.com/86925275/138614775-e78ff032-65f3-449a-84e7-b371600e7891.png)
+
  
    
    
