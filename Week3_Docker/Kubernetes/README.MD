@@ -52,7 +52,16 @@ I forked repo:
  
  ![docker-image](https://user-images.githubusercontent.com/86925275/138612770-9300121b-f265-4440-8bda-57722111d830.png)
 
+ 2.6 Run Docker container and verify connection
+ 
+ ![docker-run](https://user-images.githubusercontent.com/86925275/138613356-5767bdf3-b5a6-4e44-ba46-ee344930c16a.png)
+ 
+ ![docker-run-2](https://user-images.githubusercontent.com/86925275/138613419-e5ef3ec1-8e3d-4211-be39-7894070e2539.png)
 
+ 
+ 
+ 
+ 
    
    
 
