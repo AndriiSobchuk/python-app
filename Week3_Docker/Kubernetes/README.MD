@@ -105,8 +105,11 @@ I forked repo:
 
 **Task 4)** Deploy the application into the K8S cluster
 
-**4.1.** Create Deployment .yaml file with containerized application
+**4.1.** Create Deployment .yaml file with containerized application and deploy app
 
     kubectl create deployment python-app --dry-run=client --image=andriisobchuk/python-app -o yaml >> python-app.yaml 
     kubectl apply -f python-app.yaml 
     kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+    
+  
+![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
