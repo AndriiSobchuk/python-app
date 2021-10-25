@@ -108,8 +108,17 @@ I forked repo:
 **4.1.** Create Deployment .yaml file with containerized application and deploy app
 
     kubectl create deployment python-app --dry-run=client --image=andriisobchuk/python-app -o yaml >> python-app.yaml 
+ 
+ Add port 8080 to .yaml file configuration 
+ 
+ ![yaml](https://user-images.githubusercontent.com/86925275/138642320-a4688518-5d5c-43c1-a3c6-22c4e93c89eb.png)
+
+
     kubectl apply -f python-app.yaml 
-    kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+    kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app![yaml](https://user-images.githubusercontent.com/86925275/138642235-323c3c64-2668-4b01-9bd0-6938b288525d.png)
+
+    
+   ![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
+
     
   
-![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
