@@ -118,7 +118,9 @@ I forked repo:
 
 
     kubectl apply -f python-app.yaml 
-    kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app![yaml](https://user-images.githubusercontent.com/86925275/138642235-323c3c64-2668-4b01-9bd0-6938b288525d.png)
+    kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+    
+   ![yaml](https://user-images.githubusercontent.com/86925275/138642235-323c3c64-2668-4b01-9bd0-6938b288525d.png)
 
     
    ![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
