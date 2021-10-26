@@ -146,6 +146,20 @@ And verify pods and rolling update:
 
 ** Optional Task 2 ** Create a service object whitch exposes Pods with application outside the K8S cluster in order to access each of the replicas through the single  IP address/DNS name
 
+         kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+
 ** Optional Task 3 ** Specify PodDistributionBudget whitch defines that only 1 replica can be down
-    
-  kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+   
+For this purpose I create new .yaml file:  policy.yaml. Where I specified the PodDistributionBudget
+
+![policy](https://user-images.githubusercontent.com/86925275/138972652-35d583ca-c574-4ff4-959a-a274c9ad92bc.png)
+
+Then I executed the following commands to deployment and verify everithing works:
+
+       kubectl apply -f policy.yaml
+       kubectl get poddisruptionbudget.policy
+       
+![policy-2](https://user-images.githubusercontent.com/86925275/138972737-1dea6298-d720-4551-b511-720c15302613.png)
+
+
+
