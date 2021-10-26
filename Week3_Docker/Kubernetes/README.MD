@@ -17,6 +17,9 @@ I forked repo:
     # verify versions of installed tools
     docker --version
     
+    # add Docker user and group 
+    sudo usermod -aG docker $USER && newgrp docker
+    
     #add Docker to aoutostart
     sudo systemctl enable docker
     sudo systemctl start docker
