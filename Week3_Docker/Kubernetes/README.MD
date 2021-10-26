@@ -104,6 +104,7 @@ I forked repo:
 ![minikube-srv-nodes](https://user-images.githubusercontent.com/86925275/138562873-faef27fc-2ec4-4d79-b644-ee1c881bc1a2.png)
 
 
+![minikube-status](https://user-images.githubusercontent.com/86925275/138967310-a52bead9-a0e2-445d-a4ba-5e5b98194803.png)
 
 
 **Task 4)** Deploy the application into the K8S cluster
@@ -112,18 +113,21 @@ I forked repo:
 
     kubectl create deployment python-app --dry-run=client --image=andriisobchuk/python-app -o yaml >> python-app.yaml 
  
- Add port 8080 to .yaml file configuration 
+ Verify .yaml file: 
  
- ![yaml](https://user-images.githubusercontent.com/86925275/138642320-a4688518-5d5c-43c1-a3c6-22c4e93c89eb.png)
+ ![yaml-scr-base](https://user-images.githubusercontent.com/86925275/138967359-ea3bee2d-db83-4491-9821-161026b12a48.png)
 
+ Deploy application:
 
     kubectl apply -f python-app.yaml 
-    kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
     
-   ![yaml](https://user-images.githubusercontent.com/86925275/138642235-323c3c64-2668-4b01-9bd0-6938b288525d.png)
+    
+ Verify pod and deployment:
 
     
    ![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
 
     
-  
+    
+    
+  kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
