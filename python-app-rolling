@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-app
+  name: python-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-app
+  strategy: 
+  rollingUpdate: 
+      maxUnavailable: 0
+      maxSurge: 1
+  type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+      spec:
+      containers:
+      - image: andriisobchuk/python-app
+        name: python-app
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        resources:
+          limits:
+            memory: "300Mi"
+            cpu: "100m"
+          requests:
+            memory: "200Mi"
+            cpu: "15m"
+      restartPolicy: Always
+status: {}
