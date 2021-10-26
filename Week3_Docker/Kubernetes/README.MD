@@ -128,6 +128,24 @@ I forked repo:
    ![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
 
     
-    
+** Optional Task 1 ** The deployment requires 3 replicas, "RollingUpdate" strategy. Emulate the "RollingUpdate" strategy by updating docker image. Define the liveness and readiness probes to /health endpoint 8080 port, resources (request/limits)
+
+I updated my python-app.yaml file:
+
+![new_yaml](https://user-images.githubusercontent.com/86925275/138971815-61b31d8a-af74-4ad0-9757-421b595b5841.png)
+
+And then run deloyment once again with: 
+
+       kubectl apply -f python-app.yaml 
+ 
+And verify pods and rolling update:
+
+
+
+
+
+** Optional Task 2 ** Create a service object whitch exposes Pods with application outside the K8S cluster in order to access each of the replicas through the single  IP address/DNS name
+
+** Optional Task 3 ** Specify PodDistributionBudget whitch defines that only 1 replica can be down
     
   kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
