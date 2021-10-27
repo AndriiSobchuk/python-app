@@ -133,13 +133,13 @@ I forked repo:
 
 **Optional Task 1** The deployment requires 3 replicas, "RollingUpdate" strategy. Emulate the "RollingUpdate" strategy by updating docker image. Define the liveness and readiness probes to /health endpoint 8080 port, resources (request/limits)
 
-I updated my python-app.yaml file:
+I created python-app-rolling.yaml file:
 
 ![new_yaml](https://user-images.githubusercontent.com/86925275/138971815-61b31d8a-af74-4ad0-9757-421b595b5841.png)
 
 And then run deloyment once again with: 
 
-       kubectl apply -f python-app.yaml 
+       kubectl apply -f python-app-rolling.yaml 
  
 And verify pods and rolling update:
 
