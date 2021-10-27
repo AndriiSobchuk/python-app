@@ -20,7 +20,5 @@ spec:
       containers:
       - image: andriisobchuk/python-app
         name: python-app
-        ports:
-                - containerPort: 8080
         resources: {}
 status: {}
