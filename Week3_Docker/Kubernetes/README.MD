@@ -140,6 +140,8 @@ And then run deloyment once again with:
  
 And verify pods and rolling update:
 
+<img width="802" alt="Screenshot 2021-10-27 at 13 39 05" src="https://user-images.githubusercontent.com/86925275/139051973-806f8b64-92c6-41c3-8b09-f401ef93bfc7.png">
+
 
 
 
