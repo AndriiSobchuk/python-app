@@ -148,7 +148,11 @@ And verify pods and rolling update:
 
 ** Optional Task 2 ** Create a service object whitch exposes Pods with application outside the K8S cluster in order to access each of the replicas through the single  IP address/DNS name
 
-         kubectl expose deployment python-app --port=8080 --type=NodePort --name=python-app
+I created service.yaml file were I set up port 8080 to expose Pods and then create deployment and verify the access by following commands:
+
+<img width="1061" alt="Screenshot 2021-10-27 at 14 38 06" src="https://user-images.githubusercontent.com/86925275/139058681-0f06cd2b-2a83-4699-be9d-fee8f1fbb53e.png">
+
+
 
 ** Optional Task 3 ** Specify PodDistributionBudget whitch defines that only 1 replica can be down
    
