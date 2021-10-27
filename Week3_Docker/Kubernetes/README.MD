@@ -127,8 +127,11 @@ I forked repo:
     
    ![kube-deploy](https://user-images.githubusercontent.com/86925275/138639831-978af131-a038-431e-a91b-a92aa662d42b.png)
 
-    
-** Optional Task 1 ** The deployment requires 3 replicas, "RollingUpdate" strategy. Emulate the "RollingUpdate" strategy by updating docker image. Define the liveness and readiness probes to /health endpoint 8080 port, resources (request/limits)
+
+**All yaml files for optional tasks are listed in: https://github.com/AndriiSobchuk/python-app/tree/main**
+
+
+**Optional Task 1** The deployment requires 3 replicas, "RollingUpdate" strategy. Emulate the "RollingUpdate" strategy by updating docker image. Define the liveness and readiness probes to /health endpoint 8080 port, resources (request/limits)
 
 I updated my python-app.yaml file:
 
@@ -146,7 +149,7 @@ And verify pods and rolling update:
 
 
 
-** Optional Task 2 ** Create a service object whitch exposes Pods with application outside the K8S cluster in order to access each of the replicas through the single  IP address/DNS name
+**Optional Task 2** Create a service object whitch exposes Pods with application outside the K8S cluster in order to access each of the replicas through the single  IP address/DNS name
 
 I created service.yaml file were I set up port 8080 to expose Pods and then create deployment and verify the access by following commands:
 
@@ -154,7 +157,7 @@ I created service.yaml file were I set up port 8080 to expose Pods and then crea
 
 
 
-** Optional Task 3 ** Specify PodDistributionBudget whitch defines that only 1 replica can be down
+**Optional Task 3** Specify PodDistributionBudget whitch defines that only 1 replica can be down
    
 For this purpose I create new .yaml file:  policy.yaml. Where I specified the PodDistributionBudget
 
