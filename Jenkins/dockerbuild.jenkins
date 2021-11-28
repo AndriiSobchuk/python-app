@@ -15,7 +15,7 @@ pipeline {
             echo " ============== start building image =================="
             dir ('Docker/builds') {
                 docker.build 
-                #sh 'docker build -t asobchuk/lastest . '
+               
             }
         }
     }
