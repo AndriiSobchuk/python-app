@@ -12,8 +12,8 @@ pipeline {
     stage("create docker image") {
           steps {
                 echo " ============== start building image =================="
-                dir ('docker/toolbox') {
-                	sh 'docker build -t semaev/toolbox:latest . '
+                dir ('Docker/builds') {
+                	sh 'docker build -t asobchuk/python-app:latest . '
                 }
             }
         }
