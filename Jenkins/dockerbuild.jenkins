@@ -10,19 +10,12 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {
-    stage('Initialize') {
-        steps {
-            def dockerHome = tool 'myDocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-    }
     stage("create docker image") {
         steps {
             echo " ============== start building image =================="
             dir ('Docker/builds') {
-                
-                sh 'docker build -t asobchuk/lastest . '
+                docker.build - < Dockerfile
+                #sh 'docker build -t asobchuk/lastest . '
             }
         }
     }
