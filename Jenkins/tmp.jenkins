@@ -1,7 +1,6 @@
 node {
-  git '…' // checks out Dockerfile & Makefile
+  git 'https://github.com/AndriiSobchuk/python-app/blob/main/Docker/builds/Dockerfile' // checks out Dockerfile & Makefile
   def myEnv = docker.build 'my-environment:snapshot'
-  myEnv.inside {
-    sh 'make test'
+  
   }
 }
