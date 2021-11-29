@@ -1,5 +1,5 @@
 FROM python:3.7-alpine3.14
-COPY python-app/application /home/python-user
+COPY ./python-app/application /home/python-user
 WORKDIR /home/python-user
 
 RUN adduser -s /bin/sh -h /home/python-user -D python-user && \
