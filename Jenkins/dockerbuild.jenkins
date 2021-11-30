@@ -1,7 +1,7 @@
 properties([disableConcurrentBuilds()])
 pipeline {
     agent {
-        dockerfile true
+        label 'master'
     }
     triggers {
         pollSCM('* * * * *')
