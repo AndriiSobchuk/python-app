@@ -1,5 +1,5 @@
 FROM python:3.7-alpine3.14
-ADD https://github.com/AndriiSobchuk/python-app/tree/main/application /home/python-user/test
+ADD https://github.com/AndriiSobchuk/python-app/tree/main/application /home/python-user/
 WORKDIR /home/python-user
 
 RUN adduser -s /bin/sh -h /home/python-user -D python-user && \
