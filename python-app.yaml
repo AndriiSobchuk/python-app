@@ -22,3 +22,24 @@ spec:
         name: python-app
         resources: {}
 status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: python-app
+  name: python-app
+  namespace: default
+spec:
+  clusterIP:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: python-app
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
