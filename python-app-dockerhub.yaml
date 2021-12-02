@@ -1,0 +1,48 @@
+root@master:~# ls
+Deploy.yaml  deployhub.yml  kube-manifests
+root@master:~# vim deployhub.yml 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-app
+  name: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - image: andriisobchuk/python-app:latest
+        name: python-app
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: python-app
+  name: python-app
+spec:
+  clusterIP:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: python-app
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
