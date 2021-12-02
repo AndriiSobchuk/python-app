@@ -30,7 +30,6 @@ metadata:
   labels:
     app: python-app
   name: python-app
-  namespace: default
 spec:
   clusterIP:
   ports:
