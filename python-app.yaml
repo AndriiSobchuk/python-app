@@ -18,7 +18,7 @@ spec:
         app: python-app
     spec:
       containers:
-      - image: python-app-docker/application
+      - image: python-app-docker/python-app-docker:latest
         name: python-app
         resources: {}
 status: {}
