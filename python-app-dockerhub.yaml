@@ -1,7 +1,3 @@
-root@master:~# ls
-Deploy.yaml  deployhub.yml  kube-manifests
-root@master:~# vim deployhub.yml 
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
