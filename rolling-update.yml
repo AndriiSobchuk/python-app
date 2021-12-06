@@ -1,0 +1,62 @@
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - image: andriisobchuk/python-app
+        name: python-app
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        resources:
+          limits:
+            memory: "300Mi"
+            cpu: "100m"
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+status: {}
+
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: python-app
+  name: autoscaling-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: python-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 75
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: 75
