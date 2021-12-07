@@ -22,7 +22,7 @@ spec:
         app: python-app
     spec:
       containers:
-      - image: andriisobchuk/python-app
+      - image: andriisobchuk/python-app:latest
         name: python-app
         livenessProbe:
           httpGet:
